@@ -6,6 +6,7 @@ public class myPlayerCpntroller : MonoBehaviour
 {
 
     public float speed;
+    public float jumpforce;
     public Rigidbody rb;
 
     // Start is called before the first frame update
@@ -44,6 +45,12 @@ public class myPlayerCpntroller : MonoBehaviour
 
             rb.AddForce(Vector3.right * speed);
 
+        }
+        //if space pressed while touching ground
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //jump
+            rb.AddForce(Vector3.up * jumpforce);
         }
     }
 }
