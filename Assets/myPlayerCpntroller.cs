@@ -53,4 +53,16 @@ public class myPlayerCpntroller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpforce);
         }
     }
+
+    //Collision Detect
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "coinPickup")
+        {
+            //Destroy objects
+            Destroy(col.gameObject);
+
+        }
+
+    }
 }
